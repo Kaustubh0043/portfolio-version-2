@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About - Kaustubh</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="skills.html">Skills</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<main>
+
+    <!-- ABOUT SECTION -->
+    <section class="about-section">
+        <h1 class="animate-fade-in">About Me</h1>
+
+        <div class="about-content-full">
+            <div class="about-text animate-slide-up">
+                <p>Hello! I'm Kaustubh Jadhav, a passionate BTech Computer Science Engineering student at Alard University, currently in my 2nd year of studies.</p>
+
+                <p>My journey in technology began with a curiosity about how websites work, which led me to dive deep into web development. I'm particularly fascinated by full-stack development, where I can create both beautiful user interfaces and robust backend systems.</p>
+
+                <p>Throughout my academic journey, I've developed a strong foundation in programming languages including Java, Python, HTML, CSS, and JavaScript. I'm constantly learning new technologies and frameworks to stay updated with the rapidly evolving tech landscape.</p>
+
+                <p>When I'm not coding, you can find me participating in hackathons, contributing to open-source projects, or exploring the latest trends in artificial intelligence and machine learning. My goal is to become a full-stack developer who can create meaningful solutions that make a difference in people's lives.</p>
+
+                <p>I'm always excited to take on new challenges and collaborate with like-minded individuals to build innovative projects. Let's connect and create something amazing together!</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CERTIFICATIONS SECTION -->
+    <section class="certifications-section">
+        <h2 class="animate-fade-in">My Certifications</h2>
+        <p class="animate-fade-in-delay">Here are some of the certifications I've earned to enhance my skills and knowledge in various technologies.</p>
+
+        <div class="certifications-container">
+            <div class="cert-scroll-container">
+                <div class="cert-grid-scrollable" id="certificates-slider">
+                    <div class="cert-grid">
+                        <img src="img/cert1.jpg" alt="Certificate 1">
+                        <img src="img/cert2.jpg" alt="Certificate 2">
+                        <img src="img/cert3.jpg" alt="Certificate 3">
+                        <img src="img/cert4.jpg" alt="Certificate 4">
+                        <img src="img/azure.jpg" alt="Azure Certificate">
+                    </div>
+                </div>
+            </div>
+            <button class="cert-scroll-btn left" id="cert-left-btn">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="cert-scroll-btn right" id="cert-right-btn">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="social-icons">
+        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+    </div>
+
+    <p>© 2026 Kaustubh Jadhav. All Rights Reserved.</p>
+</footer>
+
+<script>
+// Certificate Slider Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const slider = document.getElementById('certificates-slider');
+    const leftBtn = document.getElementById('cert-left-btn');
+    const rightBtn = document.getElementById('cert-right-btn');
+
+    if (!slider || !leftBtn || !rightBtn) return;
+
+    const certImages = slider.querySelectorAll('img');
+    const totalImages = certImages.length;
+    let currentIndex = 0;
+
+    // Function to get current image width based on screen size
+    function getImageWidth() {
+        const firstImage = certImages[0];
+        if (firstImage) {
+            const computedStyle = window.getComputedStyle(firstImage);
+            return parseInt(computedStyle.width) + 30; // width + gap
+        }
+        return 580; // fallback: 550 + 30
+    }
+
+    // Update button states
+    function updateButtons() {
+        leftBtn.disabled = currentIndex === 0;
+        rightBtn.disabled = currentIndex >= totalImages - 2; // Show 2 images at a time to allow scrolling
+    }
+
+    // Scroll left
+    leftBtn.addEventListener('click', function() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            const imageWidth = getImageWidth();
+            slider.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
+            updateButtons();
+        }
+    });
+
+    // Scroll right
+    rightBtn.addEventListener('click', function() {
+        if (currentIndex < totalImages - 2) {
+            currentIndex++;
+            const imageWidth = getImageWidth();
+            slider.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
+            updateButtons();
+        }
+    });
+
+    // Initialize button states
+    updateButtons();
+
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        // Reset position on resize
+        currentIndex = 0;
+        slider.style.transform = 'translateX(0)';
+        updateButtons();
+    });
+});
+</script>
+
+</body>
+</html>

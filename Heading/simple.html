@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../form.css">
+    
+    
+</head>
+<body>
+    <h1 id="h1">Hello World</h1>
+    <h2 id="h2" onmouseover="mouseoverevent()" onmouseleave="onmouseleaveevent()">This is</h2>
+    <h3 id="h3"> Kaustubh</h3>
+    <h4 class="myclass1">from</h4>
+    <h5 class="myclass1">Computer</h5>
+    <h6 class="myclass2">branch</h6>
+    <p>This is the h1 to h6 file</p>
+    <p>this consist of 6 headings and 3 paragraph</p>
+    <p>Thank you</p>
+    <button onclick="handleevent()">Click me ! </button>
+    <button onclick="APICalling()">API calling</button>
+    <script>console.log("This is my js file")
+    let a = document.getElementById("h1");
+    console.log(a);
+    let b = document.getElementById("h2");
+    console.log(b); 
+    let c = document.getElementsByClassName("myclass1")[0];
+    console.log(c);
+    let d = document.getElementsByClassName("myclass2")[0];
+    console.log(d);
+    let e = document.getElementById("h3");
+    console.log(e);
+    b.style.color = "blue"; 
+    c.style.color = "green";
+    d.style.color = "purple";
+    e.style.color = "yellow";
+    function handleevent (){
+        console.log("This is click Event");
+        a.style.color = "red";
+        
+    }
+    function mouseoverevent(){
+        console.log("This is mouseover event");
+        b.style.color = "orange";
+    }
+
+    function onmouseleaveevent(){
+        console.log("This is mouseleave event");
+        b.style.color = "blue";
+    }
+
+    function APICalling(){
+        console.log("API calling successfully");
+        fetch('https://jsonplaceholder.typicode.com/todos/1')
+      .then(response => response.json())
+      .then(data => a.innerText = data.title)
+      
+    }
+    </script>
+    
+</body>
+</html>

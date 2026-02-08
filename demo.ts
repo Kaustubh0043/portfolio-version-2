@@ -1,0 +1,11 @@
+let  a: number | string = 40;
+let b: string = "SAM";
+let c: boolean = true;
+console.log(a);
+console.log(b);
+console.log(c);
+let arr : any[] = [1, 2, 3, 4, 5, "SAM"];
+console.log(arr);
+let obj : {[key: string]: any} = {name: "SAM", age: 22};
+obj.place = "India";
+console.log(obj);

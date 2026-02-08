@@ -1,0 +1,11 @@
+var a = 40;
+var b = "SAM";
+var c = true;
+console.log(a);
+console.log(b);
+console.log(c);
+var arr = [1, 2, 3, 4, 5, "SAM"];
+console.log(arr);
+var obj = { name: "SAM", age: 22 };
+obj.place = "India";
+console.log(obj);
