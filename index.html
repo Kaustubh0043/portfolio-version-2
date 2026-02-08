@@ -79,6 +79,18 @@
     </section>
 </main>
 
+<!-- Age Verification Modal -->
+<div id="ageModal" class="age-modal">
+    <div class="modal-content">
+        <div class="age-logo">18+</div>
+        <h2>Are you above 18 years old?</h2>
+        <div class="modal-buttons">
+            <button id="yesBtn" class="btn-yes">Yes</button>
+            <button id="noBtn" class="btn-no">No</button>
+        </div>
+    </div>
+</div>
+
 <footer>
     <div class="footer-top">
     <div class="social-icons">
@@ -165,6 +177,31 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 block: 'start'
             });
         }
+    });
+});
+
+// Age Verification Modal
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('ageModal');
+    const yesBtn = document.getElementById('yesBtn');
+    const noBtn = document.getElementById('noBtn');
+
+    // Show modal on page load
+    modal.style.display = 'flex';
+
+    // Blur background
+    document.body.classList.add('blur-background');
+
+    // Handle Yes button
+    yesBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+        document.body.classList.remove('blur-background');
+    });
+
+    // Handle No button
+    noBtn.addEventListener('click', function() {
+        alert('You must be 18+ to access this website.');
+        window.location.href = 'https://www.google.com';
     });
 });
 </script>
