@@ -110,8 +110,8 @@ The website is fully responsive and works seamlessly across:
 
 ## 📞 Contact
 
-- **Email**: [Your email here]
-- **LinkedIn**: [Your LinkedIn profile]
+- **Email**: [Kaustubhjadhav0043@gmail.com]
+- **LinkedIn**: [[Your LinkedIn profile](https://www.linkedin.com/in/kaustubh-jadhav-6a2216248/)]
 - **GitHub**: [https://github.com/Kaustubh0043](https://github.com/Kaustubh0043)
 
 ## 📄 License
